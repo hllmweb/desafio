@@ -1,0 +1,18 @@
+.title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1em 0;
+    padding: .8em;
+    color:#111;
+
+
+}
+
+.title{
+
+    font-size:18px;
+}
+.title svg{
+    margin-right: .5em;
+}

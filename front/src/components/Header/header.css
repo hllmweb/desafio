@@ -1,0 +1,131 @@
+.header{
+    width: 100%;
+    height: 80px;
+    background: #003274;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+   
+}
+.grid{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 800px 1fr;
+    gap: 15px;
+    line-height: 80px;
+}
+.logo a{
+    display: flex;
+}
+.logo{
+    align-items: center;
+    text-align: left;
+}
+.logo img{
+    width: 39px;
+    height: 37.14px;
+    margin-left:50px;
+    margin-right: 20px;
+}
+.logo h2{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F2F6FC;
+}
+.logo strong{
+    font-weight: 700;
+    display: block;
+}
+.research, 
+.filter, 
+.select{
+    display: inline-block;
+    position: relative;
+    justify-content: space-around;
+}
+.search{
+    display: flex;
+    justify-content: space-between;
+}
+.research input{
+    min-width: 550px;
+    height: 40px;
+    background: #F2F6FC;
+    box-shadow: inset 0px 5px 6px rgba(180, 180, 180, 0.2);
+    border-radius: 10px;
+    border:none;
+    padding:0 16px;
+    z-index: 1;
+    cursor:pointer;
+    color:rgba(0, 50, 116, 0.8);
+    font-weight: 700;
+    font-size:12px;
+}
+.research input::placeholder{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(0, 50, 116, 0.4);
+}
+.research input:hover,
+.research input:focus{
+    outline: 1px solid  rgb(1, 27, 61);
+}
+
+.research svg{
+    position: absolute;
+    right: 10px;
+    top:30px;
+    z-index: 2;
+}
+.filter select{
+    border-radius: 10px;
+    border:none;
+    width: 210px;
+    height: 40px;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    color: rgba(0, 50, 116, 0.2);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    background-color: #FFFFFF;
+    background-image: none;
+    cursor: pointer;
+}
+.filter select::-ms-expand {
+    display: none;
+}
+.filter select option{
+    color: #111;
+}
+.select svg{
+    position: absolute;
+    right: 10px;
+    top:30px;
+    z-index: 2;
+}
+
+.user{
+    text-align: right;
+    padding-right: 50px;
+}
+.user span{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 15px;
+    color: #F2F6FC;
+}
+.user span strong{
+    font-style: normal;
+    font-weight: 700;
+}
+.user svg{
+    vertical-align: middle;
+    margin-left:10px;
+}

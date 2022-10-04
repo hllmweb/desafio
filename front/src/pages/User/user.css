@@ -1,0 +1,123 @@
+.main-center{
+    height: 100%;
+    background-color: var(--main-secudary-bg-color);
+}
+.content{
+    margin:auto;
+    max-width: 800px;
+    width: 100%;
+}
+.container{    
+    background: #FFFFFF;
+    border: 1px solid #D0E0F7;
+    border-radius: 10px;
+    padding: 20px;
+}
+form{
+    margin-top: 0;
+}
+.form{
+    width: 100%;
+}
+
+.form input{
+    width: 100%;
+    height: 35px;
+    border:0;
+    border-radius:7px;
+    padding:10px;
+    margin-bottom: 15px;
+    font-size:12px;
+    cursor: pointer;
+    color:rgba(0, 50, 116, 0.8);
+    font-weight: 700;
+    background: rgba(0, 50, 116, 0.1);
+    border-radius: 10px;
+}
+.form input::placeholder{
+    color: rgba(0, 50, 116, 0.4);
+    font-size:12px;
+    font-style: normal;
+    font-weight: 700;   
+}
+.form input:hover,
+.form input:focus,
+.form select:hover,
+.form select:focus{
+    outline: 1px solid  rgba(0, 50, 116, 0.8);
+}
+.form button{
+    background: #17E42B;
+    color: #002D04;
+    border-radius: 10px;
+    border:none;
+    height: 40px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top:40px;
+}
+.form select{
+    border-radius: 10px;
+    border:none;
+    width: 100%;
+    height: 40px;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 1em;
+    font-size:12px;
+    cursor: pointer;
+    color:rgba(0, 50, 116, 0.8);
+    font-weight: 700;
+    background: rgba(0, 50, 116, 0.1);
+    border-radius: 10px;
+    background-image: none;
+    cursor: pointer;
+}
+.form select::-ms-expand {
+    display: none;
+}
+.form select option{
+    color: #111;
+    background-color: #FFF;
+    cursor: pointer;
+}
+.form .s-col-2 svg{
+    position: absolute;
+    right: 10px;
+    top:30px;
+    z-index: 2;
+}
+
+.form-group-2{
+    display: flex;
+    flex-direction: column;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    /* flex-flow: row wrap; */
+    /* width: 100%; */
+    /* margin:20px; */
+}
+.s-col-2{
+    width: 100%;
+    position: relative;
+}
+.s-col-2 label{
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    font-size:12px;
+    margin-left:10px;
+    margin-bottom: 5px;
+}
+.grid-col-2{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
