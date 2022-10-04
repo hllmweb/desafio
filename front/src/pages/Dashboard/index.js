@@ -35,7 +35,7 @@ function Dashboard(){
                     <Title name="Lista de Usuários">
                         <IoMenuOutline color="#111111" size={20}/>
                     </Title>
-                    <Link to="">Adicionar <IoAddOutline color="002D04" size={20} /> </Link>
+                    <Link to="/user/add">Adicionar <IoAddOutline color="002D04" size={20} /> </Link>
                 </div>
 
                 {console.log(data)}
