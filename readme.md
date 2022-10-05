@@ -7,22 +7,42 @@ Nome do projeto:
 ✔️ Adicionar usuário <br />
 ✔️ Editar usuário <br />
 ✔️ Deletar usuário <br />
-✔️ Carregamento infinito dos usuários <br />
-✔️ Permissão de acesso separada em nível (administrador e usuário comum) <br />
+❌ Carregamento infinito dos usuários <br />
+❌ Permissão de acesso separada em nível (administrador e usuário comum) <br />
+
+## Siga as etapas para execução do projeto
 
 
+# Para Baixar as dependências 
+- Nas pastas 
+/back
+/front
 
-# Cria a estrutura de tabelas do banco
-yarn sequelize migration:create --name=create-users
+Digite o comando
 
-# Atualiza e cria as tabelas do banco
-yarn sequelize db:migrate
+npm i
 
-ou
+
+Observação: será baixado as dependêmcoas utilizadas no back e front, abra dois terminais para realizar o download.
+
+# Criando as tabelas do banco
+- Na pasta
+/back
+
+
+Observação: foi utilizado o banco postgres, para o funcionamento das migrates ocorrer é importante criar a base de dados;
+nome da base: desafio_indt
+
+Digite o comando
 
 npx sequelize-cli db:migrate
 
+Será criado a tabela do banco
 
 
-# Remove as tebelas do banco
-yarn sequelize db:migrate:undo:all
+
+
+# Iniciando o projeto
+npm run start
+ou
+yarn run start
