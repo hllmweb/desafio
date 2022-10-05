@@ -37,7 +37,6 @@ function AuthProvider({ children }){
             password: password
         })
         .then(async (response) => {
-            console.log(response.data);
             
             if(response.data !== false){
                 setUser(response.data);
@@ -59,35 +58,6 @@ function AuthProvider({ children }){
 
     }
 
-    async function signUp(name, lastname, email, password, access_level=2){
-        setLoading(true)
-
-        await api.post('/users',{
-            name,
-            lastname,
-            email,
-            password,
-            access_level
-        })
-        .then(async (response) => {
-            
-            if(response.data !== false){
-                setLoadingAuth(false);
-                toast.success('Cadastro efetuado com Sucesso!');
-            }else{
-                toast.error('Ops, algo deu errado!');
-                setLoadingAuth(false);
-            }
-
-
-        })
-        .catch((error)=>{
-            console.log(error);
-            toast.error('Ops, algo deu errado!');
-            setLoadingAuth(false);
-        })
-
-    }
 
 
     function storageUser(data){
@@ -107,7 +77,6 @@ function AuthProvider({ children }){
                 user, 
                 loading, 
                 signIn, 
-                signUp,
                 signOut,
                 loadingAuth,
                 setUser,
