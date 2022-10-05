@@ -50,7 +50,7 @@ Observação: será baixado as dependências utilizadas no back e front, abra do
 /back
 
 
-Observação: foi utilizado o banco postgres, para o funcionamento das migrates ocorrer é importante criar a base de dados;
+Observação: foi utilizado o banco postgres, para o funcionamento das migrates, é importante criar a base de dados;
 nome da base: desafio_indt
 
 Digite o comando
