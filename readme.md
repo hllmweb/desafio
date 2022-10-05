@@ -23,7 +23,7 @@ Digite o comando
 npm i
 
 
-Observação: será baixado as dependêmcoas utilizadas no back e front, abra dois terminais para realizar o download.
+Observação: será baixado as dependências utilizadas no back e front, abra dois terminais para realizar o download.
 
 # Criando as tabelas do banco
 - Na pasta
