@@ -91,7 +91,11 @@ form{
     top:30px;
     z-index: 2;
 }
-
+.s-col-2 button.del{
+    margin-right:20px;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
 .form-group-2{
     display: flex;
     flex-direction: column;

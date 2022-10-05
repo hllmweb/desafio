@@ -21,19 +21,12 @@ export default function Header(){
 
                 <div className="search">
                     <div className="research">
-                        <input type="text" placeholder="Pesquisar..." />
-                        <IoSearch color="#021732" size={20}/>
+                        {/* <input type="text" placeholder="Pesquisar..." />
+                        <IoSearch color="#021732" size={20}/> */}
                     </div>
 
                     <div className="filter">
-                        <div className="select">
-                            <select>
-                                <option selected="selected">Todos Níveis de Acesso</option>
-                                <option>Administradores</option>
-                                <option>Usuários</option>
-                            </select>
-                            <IoChevronDownSharp color="#021732" size={20} />
-                        </div>
+                        
                     </div>
                 </div>
                 

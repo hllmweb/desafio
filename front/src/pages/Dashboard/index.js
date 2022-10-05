@@ -38,8 +38,6 @@ function Dashboard(){
                     <Link to="/user/add">Adicionar <IoAddOutline color="002D04" size={20} /> </Link>
                 </div>
 
-                {console.log(data)}
-
                 <table className="table">
                     <tr>
                         <th>Nome e Sobrenome</th>
@@ -53,10 +51,12 @@ function Dashboard(){
                             <tr key={index}>
                                 <td>{item.name} {item.lastname}</td>
                                 <td>{item.email}</td>
-                                <td>{item.access_level}</td>
+                                <td>{item.access_level == 1 && 'Administrador'}
+                                    {item.access_level == 2 && 'Usuário'}
+                                </td>
                                 <td>
-                                    <Link to={{pathname:`/user/${item.id}`}}><IoCreateOutline color="#021732" size={20} /></Link>
-                                    <Link to=""><IoTrashOutline color="#021732" size={20} /></Link>
+                                    <Link to={{pathname:`/user/edit/${item.id}`}}><IoCreateOutline color="#021732" size={20} /></Link>
+                                    <Link to={{pathname:`/user/del/${item.id}`}}><IoTrashOutline color="#021732" size={20} /></Link>
                                 </td>
                             </tr>
                         )   

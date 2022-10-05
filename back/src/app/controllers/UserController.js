@@ -13,6 +13,27 @@ class UserController{
         })
         return res.json(user);
     }
+
+    async del(req, res){
+        // const user = await User.destroy({
+        //     where: {id: req.params.id}
+        // })
+
+        const { id } = req.params;
+        const user = await User.findByPk(id);
+        if(!user){
+            return res.status(400).json({error: 'Usuário não existe.'})
+        }
+
+        if(user.id != id){
+            return res.status(401).json({ error: 'Requisição não autorizada.'})
+        }
+
+        await user.destroy();
+
+
+        return res.send();
+    }
     
     async store(req, res){
         const userExists = await User.findOne({
@@ -34,7 +55,7 @@ class UserController{
     }
 
     async update(req, res){
-        const { email, oldPassword } = req.body;
+        const { email, oldPassword, password } = req.body;
         const user = await User.findByPk(req.userId);
         if(email !== user.email){
             const userExists = await User.findOne({
@@ -46,9 +67,10 @@ class UserController{
             }
         }
 
-        if(oldPassword && !(await user.checkPassword(oldPassword))){
-            return res.status(401).json({ error: 'Senha incorreta.'})
-        }
+
+        // if(oldPassword && !(await user.checkPassword(oldPassword))){
+        //     return res.status(401).json({ error: 'Senha incorreta.'})
+        // }
 
         const {id, name, lastname, access_level} = await user.update(req.body);
 
@@ -57,6 +79,7 @@ class UserController{
             name,
             lastname,
             email,
+            password,
             access_level
          });
     }

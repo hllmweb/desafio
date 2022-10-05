@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from "react-router-dom";
+import React, {  useState, useContext } from 'react';
 import Header from "../../components/Header";
 import Title from "../../components/Title";
 import { IoPersonOutline, IoChevronDownSharp } from "react-icons/io5";
@@ -8,58 +7,46 @@ import api from '../../services/api';
 import { toast } from "react-toastify";
 import { AuthContext } from '../../contexts/auth';
 
-
-function User(){
-    const { id } = useParams();
+function UserAdd(){
     const { user } = useContext(AuthContext);
-    
+
     const [name, setName] = useState();
     const [lastname, setLastName] = useState();
     const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
     const [access_level, setAccess_Level] = useState();
     const [loadingAuth, setLoadingAuth] = useState(false);
 
-    useEffect(() => {
-        async function handleUserId(){
-            await api.get(`/users/${id}`,{ 
-                headers: {
-                  'Authorization': `Bearer ${user["token"]}`
-                }
-            })
-            .then((response) => {
-                setName(response.data.name);
-                setLastName(response.data.lastname);
-                setEmail(response.data.email);
-                setAccess_Level(response.data.access_level);
-            })
-        }
-
-        handleUserId();
-
-    },[id]);
-
-
-    const handleUserSave = async (e) => {
-        e.preventDefault();
+    async function handleUserSave(e){
         setLoadingAuth(true);
+        e.preventDefault();
         const params = { 
             name: name,
             lastname: lastname,
             email: email,
+            password: password,
             access_level: access_level
         };
 
 
-        await api.put('/users',params, { 
+
+        await api.post('/users', params, { 
             headers: {
               'Content-Type': 'application/json',
               'Authorization': `Bearer ${user["token"]}`
             }
-
+            
         })
         .then((response) => {
             setLoadingAuth(false);
-            toast.success('Atualizado com Sucesso!')
+            setName('');
+            setLastName('');
+            setEmail('');
+            setPassword('');
+            setAccess_Level('');
+            
+            toast.success('Cadastrado com Sucesso!');
+            
         }).catch((error)=>{
             setLoadingAuth(false);
             console.log(error);
@@ -67,12 +54,13 @@ function User(){
 
 
     }
+    
 
     return(
         <div className="main-center">
             <Header />
             <div className="content">
-                <Title name="Editar Usuário">
+                <Title name="Adicionar Usuário">
                     <IoPersonOutline color="#111111" size={20}/>
                 </Title>
 
@@ -106,26 +94,35 @@ function User(){
                                 </div>
 
                                 <div className="s-col-2">
+                                    <label for="password">Senha</label>
+                                    <input type="password" name="password" id="password" 
+                                            value={password}
+                                            onChange={(e)=>setPassword(e.target.value)}/>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div className="form-group-2">
+                            <div className="row">
+                                <div className="s-col-2">
                                     <label for="access_level">Nível de Acesso</label>
                                     <select name="access_level" id="access_level" 
                                                     value={access_level}
                                                     onChange={(e)=>setAccess_Level(e.target.value)}>
-                                        {access_level === 1 && <option value="1" selected>Administrador</option>}
-                                        {access_level === 2 && <option value="2">Usuário</option>}
-
+                                        
+                                        <option value="0"></option>
                                         <option value="1">Administrador</option>
                                         <option value="2">Usuário</option>
                                     </select>
 
                                     <IoChevronDownSharp color="#021732" size={20} />
                                 </div>
-
                             </div>
                         </div>
 
-                
 
-                        <button>{loadingAuth ? 'Carregando...' : 'Atualizar'}</button>
+                        <button>{loadingAuth ? 'Carregando...' : 'Cadastrar'}</button>
 
 
 
@@ -136,4 +133,4 @@ function User(){
     );
 }
 
-export default User;
+export default UserAdd;
