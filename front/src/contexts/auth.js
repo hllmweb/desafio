@@ -38,9 +38,6 @@ function AuthProvider({ children }){
         })
         .then(async (response) => {
             console.log(response.data);
-            // let dados = {
-            //     id: response.data.id
-            // }
             
 
             if(response.data !== false){
