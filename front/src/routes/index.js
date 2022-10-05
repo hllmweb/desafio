@@ -6,6 +6,7 @@ import SignUp from '../pages/SignUp';
 import Dashboard from '../pages/Dashboard';
 import User from '../pages/User';
 
+
 export default function Routes(){
     return(
         <Switch>
