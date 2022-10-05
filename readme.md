@@ -3,10 +3,23 @@ Nome do projeto:
 🚀 Desafio Técnico
 
 
-Telas
-
-<h2>Login</h2>
+<h2>Telas</h2>
+<h4>Login</h4>
 <img src="https://raw.githubusercontent.com/hllmweb/desafio/main/login.PNG" />
+
+<h4>Cadastre-se</h4>
+<img src="https://raw.githubusercontent.com/hllmweb/desafio/main/cadastre-se.PNG" />
+
+<h4>Dashboard</h4>
+<img src="https://raw.githubusercontent.com/hllmweb/desafio/main/dashboard.PNG" />
+
+
+<h4>Adicionar</h4>
+<img src="https://raw.githubusercontent.com/hllmweb/desafio/main/adicionar.PNG" />
+
+<h4>Editar</h4>
+<img src="https://raw.githubusercontent.com/hllmweb/desafio/main/edit.PNG" />
+
 
 
 ### Funções: 
