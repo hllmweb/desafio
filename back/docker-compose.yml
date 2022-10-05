@@ -1,0 +1,41 @@
+version: '3'
+services:
+  db:
+    image: postgres:12.2
+    restart: always
+    environment:
+      POSTGRES_DB: desafio_indt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5431:5432"
+  run-migrations:
+    build: .
+    restart: on-failure
+    environment:
+      POSTGRES_DB: desafio_indt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_URL: db:5432
+    # command: > 
+    #   bash -c "npx sequelize-cli db:migrate"
+    depends_on:
+      - db
+  api:
+    build: .
+    command: > 
+      bash -c "npm i &&
+               npx sequelize-cli db:migrate &&
+               npm start"
+    restart: on-failure
+    environment:
+      POSTGRES_DB: desafio_indt
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_URL: db:5432
+    ports:
+      - "3333:3333"
+    # volumes:
+    #   - .:/usr/app  
+    depends_on: 
+      - db
