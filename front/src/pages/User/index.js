@@ -13,8 +13,6 @@ function User(){
     const { id } = useParams();
     const { user } = useContext(AuthContext);
     
-    
-    
     const [name, setName] = useState();
     const [lastname, setLastName] = useState();
     const [email, setEmail] = useState();
@@ -39,10 +37,9 @@ function User(){
 
         handleUserId();
 
-    },[]);
+    },[id]);
 
     //corrigir o user
-
     async function handleUserSave(e){
         e.preventDefault();
         const params = { 
@@ -50,7 +47,7 @@ function User(){
             lastname: lastname,
             email: email
         };
-        console.log(params)
+
 
         await api.put(`/users`,{ 
             headers: {
@@ -119,8 +116,8 @@ function User(){
                                     <select name="access_level" id="access_level" 
                                                     value={access_level}
                                                     onChange={(e)=>setAccess_Level(e.target.value)}>
-                                        {access_level == 1 && <option value="1" selected>Administrador</option>}
-                                        {access_level == 2 && <option value="2">Usuário</option>}
+                                        {access_level === 1 && <option value="1" selected>Administrador</option>}
+                                        {access_level === 2 && <option value="2">Usuário</option>}
 
                                         <option value="1">Administrador</option>
                                         <option value="2">Usuário</option>
